@@ -18,13 +18,20 @@ public class ProductContainer : IProductContainer
 
     public async Task<List<ProductEntity>> GetAll()
     {
-        List<ProductEntity> resp = new List<ProductEntity>();
-        var product = await _DBContext.Products.ToListAsync();
-        if (product != null)
+        try
         {
-            resp=_mapper.Map<List<Product>,List<ProductEntity>>(product);
+            List<ProductEntity> resp = new List<ProductEntity>();
+            var product = await _DBContext.Products.ToListAsync();
+            if (product != null)
+            {
+                resp=_mapper.Map<List<Product>,List<ProductEntity>>(product);
+            }
+            return resp;
         }
-        return resp;
+        catch (System.Exception)
+        {
+            throw;
+        }
     }
 
     public async Task<ProductEntity> GetbyCode(int code)
