@@ -17,6 +17,7 @@ public partial class LearnDbContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
     public virtual DbSet<TblUser> TblUsers { get; set; }
+    public virtual DbSet<TblRole> TbleRoles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -68,6 +69,22 @@ public partial class LearnDbContext : DbContext
                     .HasColumnName("password");
 
                 entity.Property(e => e.Role)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<TblRole>(entity =>
+            {
+                entity.HasKey(e => e.Roleid);
+
+                entity.ToTable("tbl_role");
+
+                entity.Property(e => e.Roleid)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("roleid");
+
+                entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });

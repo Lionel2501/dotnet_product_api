@@ -56,21 +56,21 @@ public class ProductContainer : IProductContainer
         }
     }
 
-    // public async Task<bool> Save(ProductEntity _product)
-    // {
-    //     var product = this._DBContext.Products.FirstOrDefault(o => o.Id == _product.Id);
-    //     if (product != null)
-    //     {
-    //         product.Name = _product.ProductName;
-    //         product.Price = _product.Price;
-    //         await this._DBContext.SaveChangesAsync();
-    //     }
-    //     else
-    //     {
-    //         Product _prod=_mapper.Map<ProductEntity,Product>(_product);
-    //         this._DBContext.Products.Add(_prod);
-    //         await this._DBContext.SaveChangesAsync();
-    //     }
-    //     return true;
-    // }
+    public async Task<bool> Save(ProductEntity _product)
+    {
+        var product = this._DBContext.Products.FirstOrDefault(o => o.Id == _product.Id);
+        if (product != null)
+        {
+            product.Name = _product.ProductName;
+            product.Price = _product.Price;
+            await this._DBContext.SaveChangesAsync();
+        }
+        else
+        {
+            Product _prod=_mapper.Map<ProductEntity,Product>(_product);
+            this._DBContext.Products.Add(_prod);
+            await this._DBContext.SaveChangesAsync();
+        }
+        return true;
+    }
 }

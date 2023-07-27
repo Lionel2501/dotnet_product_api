@@ -75,3 +75,4 @@
 /home/javichiarig01/Documents/ProductApiVSC/bin/Debug/net7.0/Mono.TextTemplating.dll
 /home/javichiarig01/Documents/ProductApiVSC/bin/Debug/net7.0/System.CodeDom.dll
 /home/javichiarig01/Documents/ProductApiVSC/bin/Debug/net7.0/AutoMapper.dll
+/home/javichiarig01/Documents/ProductApiVSC/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

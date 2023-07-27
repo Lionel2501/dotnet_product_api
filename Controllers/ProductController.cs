@@ -7,6 +7,7 @@ using ProductApiVSC.Entity;
 
 namespace ProductApiVSC.Controllers;
 
+// [Authorize(Roles = "admin")]
 // [Authorize]
 [ApiController]
 [Route("[controller]")]
@@ -48,22 +49,22 @@ public class ProductController : ControllerBase
       //   return Ok(true);
       // }
 
-      return Ok(false);
+      return Ok(true);
     }
 
-    // [HttpPost(Name = "Create")]
-    // public async Task<IActionResult> Create([FromBody] Product _product)
-    // {
-    //   var product = this._DBContext.Save(_product);
-    //   // var product = this._DBContext.Products.FirstOrDefault(p => p.Id == _product.Id);
-    //   // if(product != null){
-    //   //   product.Name = _product.Name;
-    //   //   product.Price = _product.Price;
-    //   //   this._DBContext.SaveChanges();
-    //   // } else {
-    //   //   this._DBContext.Products.Add(_product);
-    //   //   this._DBContext.SaveChanges();
-    //   // }
-    //   return Ok(true);
-    // }
+    [HttpPost(Name = "Create")]
+    public async Task<IActionResult> Create([FromBody] ProductEntity _product)
+    {
+      var product = await this._DBContext.Save(_product);
+      // var product = this._DBContext.Products.FirstOrDefault(p => p.Id == _product.Id);
+      // if(product != null){
+      //   product.Name = _product.Name;
+      //   product.Price = _product.Price;
+      //   this._DBContext.SaveChanges();
+      // } else {
+      //   this._DBContext.Products.Add(_product);
+      //   this._DBContext.SaveChanges();
+      // }
+      return Ok(true);
+    }
 }
