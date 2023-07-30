@@ -22,9 +22,12 @@ public class ProductContainer : IProductContainer
         {
             List<ProductEntity> resp = new List<ProductEntity>();
             var product = await _DBContext.Products.ToListAsync();
+            // var p_entity = new ProductEntity();
+            // var transform_product = ProductEntity.TransformProduct(product);
+
             if (product != null)
             {
-                resp=_mapper.Map<List<Product>,List<ProductEntity>>(product);
+                resp=_mapper.Map<List<ProductEntity>>(product);
             }
             return resp;
         }

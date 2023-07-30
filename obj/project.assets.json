@@ -4011,19 +4011,19 @@
     ]
   },
   "packageFolders": {
-    "/home/javichiarig01/.nuget/packages/": {}
+    "/home/lionel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/javichiarig01/Documents/ProductApiVSC/ProductApiVSC.csproj",
+      "projectUniqueName": "/home/lionel/Documentos/dotnet_product/dotnet_product_api/ProductApiVSC.csproj",
       "projectName": "ProductApiVSC",
-      "projectPath": "/home/javichiarig01/Documents/ProductApiVSC/ProductApiVSC.csproj",
-      "packagesPath": "/home/javichiarig01/.nuget/packages/",
-      "outputPath": "/home/javichiarig01/Documents/ProductApiVSC/obj/",
+      "projectPath": "/home/lionel/Documentos/dotnet_product/dotnet_product_api/ProductApiVSC.csproj",
+      "packagesPath": "/home/lionel/.nuget/packages/",
+      "outputPath": "/home/lionel/Documentos/dotnet_product/dotnet_product_api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/javichiarig01/.nuget/NuGet/NuGet.Config"
+        "/home/lionel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
