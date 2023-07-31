@@ -16,20 +16,33 @@ public class ProductContainer : IProductContainer
         _mapper=mapper1;
     }
 
-    public async Task<List<ProductEntity>> GetAll()
+    public async Task<String[]> GetAll()
+    // public async Task<List<ProductEntity>> GetAll()
     {
         try
         {
             List<ProductEntity> resp = new List<ProductEntity>();
             var product = await _DBContext.Products.ToListAsync();
-            // var p_entity = new ProductEntity();
-            // var transform_product = ProductEntity.TransformProduct(product);
+            // var finalProduct = Product.GetProduct(product);
+
+            List<String[]> arr = {};
 
             if (product != null)
             {
                 resp=_mapper.Map<List<ProductEntity>>(product);
             }
-            return resp;
+
+            if(resp != null)
+            {
+                foreach (var item in resp)
+                {
+                    arr.Add(item.Price.ToString()),
+                    arr.Add(item.Name).ToString()
+                    arr.Add(item.Brand).ToCharArray()
+                }
+            }
+            return arr;
+            // return resp;
         }
         catch (System.Exception)
         {

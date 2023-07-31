@@ -40,7 +40,7 @@ public partial class LearnDbContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("productname");
+                .HasColumnName("name");
             // entity.Property(e => e.Price).HasColumnName("price");
         });
 
